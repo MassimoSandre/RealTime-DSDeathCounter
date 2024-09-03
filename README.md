@@ -8,11 +8,11 @@ This project allows you to monitor in real-time the number of player deaths duri
 - Server: A PHP application that receives data from the client, stores it in a database, and provides a web interface to display the death count. 
 
 ## Credits
-This project utilizes Quidrex's [DSDeaths](https://github.com/Quidrex/DSDeaths), which is responsible for tracking and logging the number of deaths in a text file during gameplay. To ensure the project functions correctly, you must place the entire folder containing the DSDeaths program within the client folder of the project and **rename it to counter**.
+This project utilizes [@Quidrex](https://github.com/Quidrex)'s [DSDeaths](https://github.com/Quidrex/DSDeaths), which is responsible for tracking and logging the number of deaths in a text file during gameplay. To ensure the project functions correctly, you must place the entire folder containing the DSDeaths program within the client folder of the project and **rename it to counter**.
 
 ### Project Authors:
-- Massimo Albino Sandretti (MassimoSandre)
-- Valentino Angelo Lenzi (ReiettoAyanami)
+- Massimo Albino Sandretti ([@MassimoSandre](https://github.com/MassimoSandre))
+- Valentino Angelo Lenzi ([@ReiettoAyanami](https://github.com/ReiettoAyanami))
 
 ## Requirements
 - Python 3.x and the following modules: `requests`, `subprocess`, `time`, `json`

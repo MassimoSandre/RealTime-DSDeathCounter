@@ -4,30 +4,28 @@
 This project allows you to monitor in real-time the number of player deaths during gameplay sessions of Dark Souls or Sekiro. The death count can be displayed through a web interface that automatically updates and can be integrated as an external source in software like OBS, allowing players to stream with a live-updating death counter for viewers to see.
 
 ### Project Components
-- Client: A Python application that interacts with software to read the death count and send it to the server.
+- Client: A Python application that reads the game's process memory to retrieve the death count and send it to the server.
 - Server: A PHP application that receives data from the client, stores it in a database, and provides a web interface to display the death count. 
 
 ## Credits
-This project utilizes [@Quidrex](https://github.com/Quidrex)'s [DSDeaths](https://github.com/Quidrex/DSDeaths), which is responsible for tracking and logging the number of deaths in a text file during gameplay. To ensure the project functions correctly, you must place the entire folder containing the DSDeaths program within the client folder of the project and **rename it to counter**.
+This project was inspired by [@Quidrex](https://github.com/Quidrex)'s [DSDeaths](https://github.com/Quidrex/DSDeaths), which was initially used to track and log the number of deaths. Although this project no longer relies on DSDeaths, its concepts and implementation provided a fundation that greatly contributed to the development of this project.
 
 ### Project Authors:
 - Massimo Albino Sandretti ([@MassimoSandre](https://github.com/MassimoSandre))
 - Valentino Angelo Lenzi ([@ReiettoAyanami](https://github.com/ReiettoAyanami))
 
 ## Requirements
-- Python 3.x and the following modules: `requests`, `subprocess`, `time`, `json`
-- PHP 7.0 or higher
+- Python 3.12 and the following modules: `pymem`, `psutil`, `requests`, `json`
+- PHP 7.x or higher
 - MySQL/MariaDB
-- [Quidrex's DSDeaths](https://github.com/Quidrex/DSDeaths)
 
 ## Installation
 ### Client Configuration
-1. Place the folder containing the **`DSDeaths`** program in the **`client`** folder and rename it to **`counter`**
-2. Open the **`config.json`** file in the **`client`** folder and modify the following parameters to fit you system:
+1. Open the **`config.json`** file in the **`client`** folder and modify the following parameters to fit you system:
     - **`baseURL`**: the server URL where the data will be sent
     - **`username`**: the username to identify the player
     - **`lastDeathsRecorded`**: leave it as 0 or set it to the last recorded death count
-3. Install the necessary Python modules: `requests`, `subprocess`, `time`, `json`
+2. Install the necessary Python modules: `pymem`, `psutil`, `requests`, `json`
 
 ### Server Configuration
 1. Open the **`config.php`** file in the **`server`** folder and modify the following parameters:
@@ -36,7 +34,7 @@ This project utilizes [@Quidrex](https://github.com/Quidrex)'s [DSDeaths](https:
     - **`$password`**: your MySQL/MariaDB database password
     - **`$database`**: the name of the MySQL/MariaDB to be used/created
     - **`$adminPassword`**: the sha512 hash of the password required to install the database via the **`DBInstallation.php`** script
-    - **`createDB`**: to specify if a new database needs to be created (otherwise an existing database with the provided name will be used)
+    - **`$createDB`**: to specify if a new database needs to be created (otherwise an existing database with the provided name will be used)
 
 ### Database Installation
 1. Upload all server files to your web server

@@ -15,7 +15,7 @@ games = [
     Game("DarkSoulsII.exe", "Dark Souls II", (0x16148F0, 0xD0, 0x490, 0x104)),
     Game("DarkSoulsIII.exe", "Dark Souls III", (0x47572B8, 0x98)),
     Game("DarkSoulsRemastered.exe", "Dark Souls Remastered", (0x1C8A530, 0x98)),
-    Game("Sekiro.exe", "Sekiro", (0x3D5AAC0, 0x90)),
+    Game("sekiro.exe", "Sekiro", (0x3D5AAC0, 0x90)),
     Game("eldenring.exe", "Elden Ring", (0x3CD4D88, 0x94))
 ]
 
